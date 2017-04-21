@@ -1,0 +1,1035 @@
+@prefix : <http://www.semanticweb.org/pratham09/ontologies/2017/2/Project3-CSCI8350#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix Project3-CSCI8350: <http://www.pratham.org/Project3-CSCI8350#> .
+@base <http://www.pratham.org/Project3-CSCI8350> .
+
+<http://www.pratham.org/Project3-CSCI8350> rdf:type owl:Ontology ;
+                                            owl:versionIRI <http://www.pratham.org/Project3-CSCI8350/1.0> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.pratham.org/Project3-CSCI8350#hasAttribute
+Project3-CSCI8350:hasAttribute rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty ;
+                               owl:inverseOf Project3-CSCI8350:isAttributeOf ;
+                               rdfs:range Project3-CSCI8350:PlayerAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#hasPosition
+Project3-CSCI8350:hasPosition rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              owl:inverseOf Project3-CSCI8350:isPositionOf ;
+                              rdf:type owl:FunctionalProperty .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#hasSkill
+Project3-CSCI8350:hasSkill rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           owl:inverseOf Project3-CSCI8350:isSkillOf ;
+                           rdfs:range Project3-CSCI8350:PlayerSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#isAttributeOf
+Project3-CSCI8350:isAttributeOf rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                rdfs:domain Project3-CSCI8350:PlayerAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#isPositionOf
+Project3-CSCI8350:isPositionOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#isSkillOf
+Project3-CSCI8350:isSkillOf rdf:type owl:ObjectProperty ;
+                            rdfs:domain Project3-CSCI8350:PlayerSkill .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.pratham.org/Project3-CSCI8350#hasAgeValue
+Project3-CSCI8350:hasAgeValue rdf:type owl:DatatypeProperty ,
+                                       owl:FunctionalProperty .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#hasOverallValue
+Project3-CSCI8350:hasOverallValue rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                  rdf:type owl:FunctionalProperty .
+
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:comment "All data properties are used to classify players into respective Teams (First, Substitutes, Reserves)" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.pratham.org/Project3-CSCI8350#AerialThreatSkill
+Project3-CSCI8350:AerialThreatSkill rdf:type owl:Class ;
+                                    rdfs:subClassOf Project3-CSCI8350:DefensiveMindedSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Agility
+Project3-CSCI8350:Agility rdf:type owl:Class ;
+                          rdfs:subClassOf Project3-CSCI8350:BasicAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#AlbertoMoreno
+Project3-CSCI8350:AlbertoMoreno rdf:type owl:Class ;
+                                rdfs:subClassOf Project3-CSCI8350:NamedPlayers ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                  owl:someValuesFrom Project3-CSCI8350:Agility
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                  owl:someValuesFrom Project3-CSCI8350:Stamina
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                  owl:someValuesFrom Project3-CSCI8350:Strength
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                  owl:someValuesFrom Project3-CSCI8350:Tackling
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                  owl:someValuesFrom Project3-CSCI8350:AerialThreatSkill
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                  owl:someValuesFrom Project3-CSCI8350:StrongSkill
+                                                ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#AttackMindedSkill
+Project3-CSCI8350:AttackMindedSkill rdf:type owl:Class ;
+                                    rdfs:subClassOf Project3-CSCI8350:PlayerSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#AttackPosition
+Project3-CSCI8350:AttackPosition rdf:type owl:Class ;
+                                 rdfs:subClassOf Project3-CSCI8350:AttackingAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Attacker
+Project3-CSCI8350:Attacker rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:PlayerPosition
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                                        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                        owl:onClass Project3-CSCI8350:AttackingAttribute
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                                        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                        owl:onClass Project3-CSCI8350:AttackMindedSkill
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#AttackingAttribute
+Project3-CSCI8350:AttackingAttribute rdf:type owl:Class ;
+                                     rdfs:subClassOf Project3-CSCI8350:PlayerAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#BallControl
+Project3-CSCI8350:BallControl rdf:type owl:Class ;
+                              rdfs:subClassOf Project3-CSCI8350:BasicAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#BallHandling
+Project3-CSCI8350:BallHandling rdf:type owl:Class ;
+                               rdfs:subClassOf Project3-CSCI8350:GoalkeepingAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#BasicAttribute
+Project3-CSCI8350:BasicAttribute rdf:type owl:Class ;
+                                 rdfs:subClassOf Project3-CSCI8350:PlayerAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#BoxToBoxSkill
+Project3-CSCI8350:BoxToBoxSkill rdf:type owl:Class ;
+                                rdfs:subClassOf Project3-CSCI8350:PassingMindedSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#CenterBack
+Project3-CSCI8350:CenterBack rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:Denfender
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                                          owl:someValuesFrom Project3-CSCI8350:Marking
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                                          owl:someValuesFrom Project3-CSCI8350:TacticianSkill
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             owl:disjointWith Project3-CSCI8350:WingBack .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#CenterForward
+Project3-CSCI8350:CenterForward rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:Attacker
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                                             owl:someValuesFrom Project3-CSCI8350:FreekickAccuracy
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                                             owl:someValuesFrom Project3-CSCI8350:ProlificSkill
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
+                                owl:disjointWith Project3-CSCI8350:Striker .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#CenterMidfield
+Project3-CSCI8350:CenterMidfield rdf:type owl:Class ;
+                                 owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:Midfielder
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                                              owl:someValuesFrom Project3-CSCI8350:Vision
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                                              owl:someValuesFrom Project3-CSCI8350:PlaymakerSkill
+                                                                            ]
+                                                                          ) ;
+                                                       rdf:type owl:Class
+                                                     ] ;
+                                 owl:disjointWith Project3-CSCI8350:WingMid .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#ClinicalFinisherSkill
+Project3-CSCI8350:ClinicalFinisherSkill rdf:type owl:Class ;
+                                        rdfs:subClassOf Project3-CSCI8350:AttackMindedSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Crossing
+Project3-CSCI8350:Crossing rdf:type owl:Class ;
+                           rdfs:subClassOf Project3-CSCI8350:MidfieldAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Curve
+Project3-CSCI8350:Curve rdf:type owl:Class ;
+                        rdfs:subClassOf Project3-CSCI8350:MidfieldAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#DefendingAttribute
+Project3-CSCI8350:DefendingAttribute rdf:type owl:Class ;
+                                     rdfs:subClassOf Project3-CSCI8350:PlayerAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#DefensiveMindedSkill
+Project3-CSCI8350:DefensiveMindedSkill rdf:type owl:Class ;
+                                       rdfs:subClassOf Project3-CSCI8350:PlayerSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#DejanLovren
+Project3-CSCI8350:DejanLovren rdf:type owl:Class ;
+                              rdfs:subClassOf Project3-CSCI8350:NamedPlayers ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:Agility
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:Marking
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:Speed
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:Strength
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                owl:someValuesFrom Project3-CSCI8350:AerialThreatSkill
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                owl:someValuesFrom Project3-CSCI8350:TacticianSkill
+                                              ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Denfender
+Project3-CSCI8350:Denfender rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:PlayerPosition
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                                         owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                         owl:onClass Project3-CSCI8350:DefendingAttribute
+                                                                       ]
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                                         owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                         owl:onClass Project3-CSCI8350:DefensiveMindedSkill
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#DistanceShooterSkill
+Project3-CSCI8350:DistanceShooterSkill rdf:type owl:Class ;
+                                       rdfs:subClassOf Project3-CSCI8350:AttackMindedSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Diving
+Project3-CSCI8350:Diving rdf:type owl:Class ;
+                         rdfs:subClassOf Project3-CSCI8350:GoalkeepingAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#DivockOrigi
+Project3-CSCI8350:DivockOrigi rdf:type owl:Class ;
+                              rdfs:subClassOf Project3-CSCI8350:NamedPlayers ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:AttackPosition
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:BallControl
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:FreekickAccuracy
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:Speed
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                owl:someValuesFrom Project3-CSCI8350:DistanceShooterSkill
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                owl:someValuesFrom Project3-CSCI8350:ProlificSkill
+                                              ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#DribblerSkill
+Project3-CSCI8350:DribblerSkill rdf:type owl:Class ;
+                                rdfs:subClassOf Project3-CSCI8350:PassingMindedSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Dribbling
+Project3-CSCI8350:Dribbling rdf:type owl:Class ;
+                            rdfs:subClassOf Project3-CSCI8350:MidfieldAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Finishing
+Project3-CSCI8350:Finishing rdf:type owl:Class ;
+                            rdfs:subClassOf Project3-CSCI8350:AttackingAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#FlairSkill
+Project3-CSCI8350:FlairSkill rdf:type owl:Class ;
+                             rdfs:subClassOf Project3-CSCI8350:PassingMindedSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#FreekickAccuracy
+Project3-CSCI8350:FreekickAccuracy rdf:type owl:Class ;
+                                   rdfs:subClassOf Project3-CSCI8350:AttackingAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#GoalKeeper
+Project3-CSCI8350:GoalKeeper rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:PlayerPosition
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                                          owl:minQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass Project3-CSCI8350:GoalkeepingAttribute
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                               owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                               owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                   owl:unionOf ( Project3-CSCI8350:BasicAttribute
+                                                                                 Project3-CSCI8350:GoalkeepingAttribute
+                                                                               )
+                                                                 ]
+                                             ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#GoalkeepingAttribute
+Project3-CSCI8350:GoalkeepingAttribute rdf:type owl:Class ;
+                                       rdfs:subClassOf Project3-CSCI8350:PlayerAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#JordanIbe
+Project3-CSCI8350:JordanIbe rdf:type owl:Class ;
+                            rdfs:subClassOf Project3-CSCI8350:NamedPlayers ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                              owl:someValuesFrom Project3-CSCI8350:AttackPosition
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                              owl:someValuesFrom Project3-CSCI8350:BallControl
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                              owl:someValuesFrom Project3-CSCI8350:Finishing
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                              owl:someValuesFrom Project3-CSCI8350:Speed
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasSkill ;
+                                              owl:someValuesFrom Project3-CSCI8350:ClinicalFinisherSkill
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasSkill ;
+                                              owl:someValuesFrom Project3-CSCI8350:PoacherSkill
+                                            ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#LiverpoolFC
+Project3-CSCI8350:LiverpoolFC rdf:type owl:Class ;
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass Project3-CSCI8350:BasicAttribute
+                                                  ] ;
+                              rdfs:comment "This is ANFIELD !! Home of Liverpool Football Club. The ontology herewith provides a classification of a club players with respect to their skills, attributes and positions." .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#LorisKarius
+Project3-CSCI8350:LorisKarius rdf:type owl:Class ;
+                              rdfs:subClassOf Project3-CSCI8350:NamedPlayers ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:Agility
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:BallControl
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:BallHandling
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:Diving
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                owl:someValuesFrom Project3-CSCI8350:Positioning
+                                              ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Marking
+Project3-CSCI8350:Marking rdf:type owl:Class ;
+                          rdfs:subClassOf Project3-CSCI8350:DefendingAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#MidfieldAttribute
+Project3-CSCI8350:MidfieldAttribute rdf:type owl:Class ;
+                                    rdfs:subClassOf Project3-CSCI8350:PlayerAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Midfielder
+Project3-CSCI8350:Midfielder rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:PlayerPosition
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                                          owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass Project3-CSCI8350:MidfieldAttribute
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                                          owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass Project3-CSCI8350:PassingMindedSkill
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#NamedPlayers
+Project3-CSCI8350:NamedPlayers rdf:type owl:Class ;
+                               rdfs:subClassOf Project3-CSCI8350:Team ;
+                               rdfs:comment "Instances of Attacker, Defender, Midfielder and GoalKeeper classes. These denote Type of players while creating individuals. For example if DanialWoodburn has Type PhilliCoutinho then DanialWoodburn is a Midfielder." .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#NathanialClyne
+Project3-CSCI8350:NathanialClyne rdf:type owl:Class ;
+                                 rdfs:subClassOf Project3-CSCI8350:NamedPlayers ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                   owl:someValuesFrom Project3-CSCI8350:BallControl
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                   owl:someValuesFrom Project3-CSCI8350:Stamina
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                   owl:someValuesFrom Project3-CSCI8350:Strength
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                   owl:someValuesFrom Project3-CSCI8350:Tackling
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                   owl:someValuesFrom Project3-CSCI8350:AerialThreatSkill
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                   owl:someValuesFrom Project3-CSCI8350:StrongSkill
+                                                 ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#PassingMindedSkill
+Project3-CSCI8350:PassingMindedSkill rdf:type owl:Class ;
+                                     rdfs:subClassOf Project3-CSCI8350:PlayerSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#PhillipCoutinho
+Project3-CSCI8350:PhillipCoutinho rdf:type owl:Class ;
+                                  rdfs:subClassOf Project3-CSCI8350:NamedPlayers ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                    owl:someValuesFrom Project3-CSCI8350:Agility
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                    owl:someValuesFrom Project3-CSCI8350:BallControl
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                    owl:someValuesFrom Project3-CSCI8350:BoxToBoxSkill
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                    owl:someValuesFrom Project3-CSCI8350:Curve
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                    owl:someValuesFrom Project3-CSCI8350:DribblerSkill
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                    owl:someValuesFrom Project3-CSCI8350:PlaymakerSkill
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                    owl:someValuesFrom Project3-CSCI8350:Stamina
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                    owl:someValuesFrom Project3-CSCI8350:Vision
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                    owl:someValuesFrom Project3-CSCI8350:BoxToBoxSkill
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                    owl:someValuesFrom Project3-CSCI8350:DribblerSkill
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                    owl:someValuesFrom Project3-CSCI8350:PlaymakerSkill
+                                                  ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#PlayerAttribute
+Project3-CSCI8350:PlayerAttribute rdf:type owl:Class ;
+                                  rdfs:subClassOf Project3-CSCI8350:LiverpoolFC ;
+                                  rdfs:comment "Player attributes viz. attacking, defending, midfielding and goalkeeping attributes," .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#PlayerPosition
+Project3-CSCI8350:PlayerPosition rdf:type owl:Class ;
+                                 owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:LiverpoolFC
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                                              owl:someValuesFrom Project3-CSCI8350:BasicAttribute
+                                                                            ]
+                                                                          ) ;
+                                                       rdf:type owl:Class
+                                                     ] ;
+                                 rdfs:comment "Positions like attacking, defending, midfielding and goalkeeping." .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#PlayerSkill
+Project3-CSCI8350:PlayerSkill rdf:type owl:Class ;
+                              rdfs:subClassOf Project3-CSCI8350:LiverpoolFC ;
+                              rdfs:comment "Skills such as dribbling, shotstopper, strong, aerial threat etc.." .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#PlaymakerSkill
+Project3-CSCI8350:PlaymakerSkill rdf:type owl:Class ;
+                                 rdfs:subClassOf Project3-CSCI8350:PassingMindedSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#PoacherSkill
+Project3-CSCI8350:PoacherSkill rdf:type owl:Class ;
+                               rdfs:subClassOf Project3-CSCI8350:AttackMindedSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Positioning
+Project3-CSCI8350:Positioning rdf:type owl:Class ;
+                              rdfs:subClassOf Project3-CSCI8350:GoalkeepingAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#ProlificSkill
+Project3-CSCI8350:ProlificSkill rdf:type owl:Class ;
+                                rdfs:subClassOf Project3-CSCI8350:AttackMindedSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Reflexes
+Project3-CSCI8350:Reflexes rdf:type owl:Class ;
+                           rdfs:subClassOf Project3-CSCI8350:GoalkeepingAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#ReserveSquad
+Project3-CSCI8350:ReserveSquad rdf:type owl:Class ;
+                               owl:equivalentClass [ rdf:type owl:Class ;
+                                                     owl:unionOf ( [ owl:intersectionOf ( Project3-CSCI8350:Team
+                                                                                          [ rdf:type owl:Restriction ;
+                                                                                            owl:onProperty Project3-CSCI8350:hasAgeValue ;
+                                                                                            owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                 owl:onDatatype xsd:integer ;
+                                                                                                                 owl:withRestrictions ( [ xsd:maxExclusive 22
+                                                                                                                                        ]
+                                                                                                                                      )
+                                                                                                               ]
+                                                                                          ]
+                                                                                        ) ;
+                                                                     rdf:type owl:Class
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty Project3-CSCI8350:hasOverallValue ;
+                                                                     owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                          owl:onDatatype xsd:integer ;
+                                                                                          owl:withRestrictions ( [ xsd:maxExclusive 80
+                                                                                                                 ]
+                                                                                                               )
+                                                                                        ]
+                                                                   ]
+                                                                 )
+                                                   ] ;
+                               rdfs:subClassOf Project3-CSCI8350:Team ;
+                               rdfs:comment "The Reserves mostly have young talents." .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#RobertoFirmino
+Project3-CSCI8350:RobertoFirmino rdf:type owl:Class ;
+                                 rdfs:subClassOf Project3-CSCI8350:NamedPlayers ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                   owl:someValuesFrom Project3-CSCI8350:Agility
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                   owl:someValuesFrom Project3-CSCI8350:AttackPosition
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                   owl:someValuesFrom Project3-CSCI8350:Finishing
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                   owl:someValuesFrom Project3-CSCI8350:Speed
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                   owl:someValuesFrom Project3-CSCI8350:ClinicalFinisherSkill
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                   owl:someValuesFrom Project3-CSCI8350:PoacherSkill
+                                                 ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#SadioMane
+Project3-CSCI8350:SadioMane rdf:type owl:Class ;
+                            rdfs:subClassOf Project3-CSCI8350:NamedPlayers ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                              owl:someValuesFrom Project3-CSCI8350:Crossing
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                              owl:someValuesFrom Project3-CSCI8350:Curve
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                              owl:someValuesFrom Project3-CSCI8350:Speed
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                              owl:someValuesFrom Project3-CSCI8350:Stamina
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasSkill ;
+                                              owl:someValuesFrom Project3-CSCI8350:DribblerSkill
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Project3-CSCI8350:hasSkill ;
+                                              owl:someValuesFrom Project3-CSCI8350:FlairSkill
+                                            ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#SeniorSquad
+Project3-CSCI8350:SeniorSquad rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:Team
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty Project3-CSCI8350:hasAgeValue ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:integer ;
+                                                                                                owl:withRestrictions ( [ xsd:minInclusive 22
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty Project3-CSCI8350:hasOverallValue ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:integer ;
+                                                                                                owl:withRestrictions ( [ xsd:minInclusive 80
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:comment "Includes Star and Experience players that start the match." .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Speed
+Project3-CSCI8350:Speed rdf:type owl:Class ;
+                        rdfs:subClassOf Project3-CSCI8350:BasicAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Stamina
+Project3-CSCI8350:Stamina rdf:type owl:Class ;
+                          rdfs:subClassOf Project3-CSCI8350:BasicAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Strength
+Project3-CSCI8350:Strength rdf:type owl:Class ;
+                           rdfs:subClassOf Project3-CSCI8350:DefendingAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Striker
+Project3-CSCI8350:Striker rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:Attacker
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                                       owl:someValuesFrom Project3-CSCI8350:Finishing
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                                       owl:someValuesFrom Project3-CSCI8350:ClinicalFinisherSkill
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#StrongSkill
+Project3-CSCI8350:StrongSkill rdf:type owl:Class ;
+                              rdfs:subClassOf Project3-CSCI8350:DefensiveMindedSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Tackling
+Project3-CSCI8350:Tackling rdf:type owl:Class ;
+                           rdfs:subClassOf Project3-CSCI8350:DefendingAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#TacticianSkill
+Project3-CSCI8350:TacticianSkill rdf:type owl:Class ;
+                                 rdfs:subClassOf Project3-CSCI8350:DefensiveMindedSkill .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Team
+Project3-CSCI8350:Team rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:unionOf ( Project3-CSCI8350:ReserveSquad
+                                                           Project3-CSCI8350:SeniorSquad
+                                                         )
+                                           ] ;
+                       rdfs:subClassOf Project3-CSCI8350:LiverpoolFC ;
+                       rdfs:comment "Teams of Liverpool FC" .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#Vision
+Project3-CSCI8350:Vision rdf:type owl:Class ;
+                         rdfs:subClassOf Project3-CSCI8350:MidfieldAttribute .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#WingBack
+Project3-CSCI8350:WingBack rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:Denfender
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                                        owl:someValuesFrom Project3-CSCI8350:Tackling
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                                        owl:someValuesFrom Project3-CSCI8350:StrongSkill
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#WingMid
+Project3-CSCI8350:WingMid rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( Project3-CSCI8350:Midfielder
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty Project3-CSCI8350:hasAttribute ;
+                                                                       owl:someValuesFrom Project3-CSCI8350:Crossing
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty Project3-CSCI8350:hasSkill ;
+                                                                       owl:someValuesFrom Project3-CSCI8350:FlairSkill
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.pratham.org/Project3-CSCI8350#AdamLallana
+Project3-CSCI8350:AdamLallana rdf:type owl:NamedIndividual ,
+                                       Project3-CSCI8350:SadioMane ;
+                              Project3-CSCI8350:hasAgeValue 24 ;
+                              Project3-CSCI8350:hasOverallValue 85 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#AlbertoMoreno
+Project3-CSCI8350:AlbertoMoreno rdf:type owl:NamedIndividual ,
+                                         Project3-CSCI8350:AlbertoMoreno ;
+                                Project3-CSCI8350:hasAgeValue 23 ;
+                                Project3-CSCI8350:hasOverallValue 80 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#DanialWoodburn
+Project3-CSCI8350:DanialWoodburn rdf:type owl:NamedIndividual ,
+                                          Project3-CSCI8350:PhillipCoutinho ;
+                                 Project3-CSCI8350:hasAgeValue 19 ;
+                                 Project3-CSCI8350:hasOverallValue 71 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#DanielSturridge
+Project3-CSCI8350:DanielSturridge rdf:type owl:NamedIndividual ,
+                                           Project3-CSCI8350:RobertoFirmino ;
+                                  Project3-CSCI8350:hasAgeValue 27 ;
+                                  Project3-CSCI8350:hasOverallValue 89 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#DannyIngs
+Project3-CSCI8350:DannyIngs rdf:type owl:NamedIndividual ,
+                                     Project3-CSCI8350:SadioMane ;
+                            Project3-CSCI8350:hasAgeValue 19 ;
+                            Project3-CSCI8350:hasOverallValue 76 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#DejanLovren
+Project3-CSCI8350:DejanLovren rdf:type owl:NamedIndividual ,
+                                       Project3-CSCI8350:DejanLovren ;
+                              Project3-CSCI8350:hasAgeValue 25 ;
+                              Project3-CSCI8350:hasOverallValue 86 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#DivockOrigi
+Project3-CSCI8350:DivockOrigi rdf:type owl:NamedIndividual ,
+                                       Project3-CSCI8350:DivockOrigi ;
+                              Project3-CSCI8350:hasAgeValue 22 ;
+                              Project3-CSCI8350:hasOverallValue 78 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#JamesMilner
+Project3-CSCI8350:JamesMilner rdf:type owl:NamedIndividual ,
+                                       Project3-CSCI8350:NathanialClyne ;
+                              Project3-CSCI8350:hasAgeValue 27 ;
+                              Project3-CSCI8350:hasOverallValue 86 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#JoeGomez
+Project3-CSCI8350:JoeGomez rdf:type owl:NamedIndividual ,
+                                    Project3-CSCI8350:NathanialClyne ;
+                           Project3-CSCI8350:hasAgeValue 20 ;
+                           Project3-CSCI8350:hasOverallValue 75 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#JoelMatip
+Project3-CSCI8350:JoelMatip rdf:type owl:NamedIndividual ,
+                                     Project3-CSCI8350:DejanLovren ;
+                            Project3-CSCI8350:hasAgeValue 23 ;
+                            Project3-CSCI8350:hasOverallValue 83 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#JordanHenderson
+Project3-CSCI8350:JordanHenderson rdf:type owl:NamedIndividual ,
+                                           Project3-CSCI8350:PhillipCoutinho ;
+                                  Project3-CSCI8350:hasAgeValue 27 ;
+                                  Project3-CSCI8350:hasOverallValue 87 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#LucasLeiva
+Project3-CSCI8350:LucasLeiva rdf:type owl:NamedIndividual ,
+                                      Project3-CSCI8350:PhillipCoutinho ;
+                             Project3-CSCI8350:hasAgeValue 29 ;
+                             Project3-CSCI8350:hasOverallValue 79 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#NathanialClyne
+Project3-CSCI8350:NathanialClyne rdf:type owl:NamedIndividual ,
+                                          Project3-CSCI8350:NathanialClyne ;
+                                 Project3-CSCI8350:hasAgeValue 24 ;
+                                 Project3-CSCI8350:hasOverallValue 82 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#PhillipCoutinho
+Project3-CSCI8350:PhillipCoutinho rdf:type owl:NamedIndividual ,
+                                           Project3-CSCI8350:PhillipCoutinho ;
+                                  Project3-CSCI8350:hasAgeValue 24 ;
+                                  Project3-CSCI8350:hasOverallValue 90 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#RobertKlavan
+Project3-CSCI8350:RobertKlavan rdf:type owl:NamedIndividual ,
+                                        Project3-CSCI8350:DejanLovren ;
+                               Project3-CSCI8350:hasAgeValue 21 ;
+                               Project3-CSCI8350:hasOverallValue 73 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#RobertoFirmino
+Project3-CSCI8350:RobertoFirmino rdf:type owl:NamedIndividual ,
+                                          Project3-CSCI8350:RobertoFirmino ;
+                                 Project3-CSCI8350:hasAgeValue 24 ;
+                                 Project3-CSCI8350:hasOverallValue 86 .
+
+
+###  http://www.pratham.org/Project3-CSCI8350#SimonMignolet
+Project3-CSCI8350:SimonMignolet rdf:type owl:NamedIndividual ,
+                                         Project3-CSCI8350:LorisKarius ;
+                                Project3-CSCI8350:hasAgeValue 25 ;
+                                Project3-CSCI8350:hasOverallValue 84 .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Project3-CSCI8350:AerialThreatSkill
+                Project3-CSCI8350:StrongSkill
+                Project3-CSCI8350:TacticianSkill
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Project3-CSCI8350:AttackMindedSkill
+                Project3-CSCI8350:DefensiveMindedSkill
+                Project3-CSCI8350:PassingMindedSkill
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Project3-CSCI8350:AttackPosition
+                Project3-CSCI8350:Finishing
+                Project3-CSCI8350:FreekickAccuracy
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Project3-CSCI8350:Attacker
+                Project3-CSCI8350:Denfender
+                Project3-CSCI8350:GoalKeeper
+                Project3-CSCI8350:Midfielder
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Project3-CSCI8350:AttackingAttribute
+                Project3-CSCI8350:DefendingAttribute
+                Project3-CSCI8350:GoalkeepingAttribute
+                Project3-CSCI8350:MidfieldAttribute
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Project3-CSCI8350:BallHandling
+                Project3-CSCI8350:Diving
+                Project3-CSCI8350:Positioning
+                Project3-CSCI8350:Reflexes
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Project3-CSCI8350:BoxToBoxSkill
+                Project3-CSCI8350:DribblerSkill
+                Project3-CSCI8350:FlairSkill
+                Project3-CSCI8350:PlaymakerSkill
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Project3-CSCI8350:ClinicalFinisherSkill
+                Project3-CSCI8350:DistanceShooterSkill
+                Project3-CSCI8350:PoacherSkill
+                Project3-CSCI8350:ProlificSkill
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Project3-CSCI8350:Crossing
+                Project3-CSCI8350:Curve
+                Project3-CSCI8350:Dribbling
+                Project3-CSCI8350:Vision
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Project3-CSCI8350:Marking
+                Project3-CSCI8350:Strength
+                Project3-CSCI8350:Tackling
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi

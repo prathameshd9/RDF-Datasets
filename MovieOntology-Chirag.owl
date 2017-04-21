@@ -1,0 +1,955 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#"
+     xml:base="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasActor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasPerson"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Actor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasActress -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasActress">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasPerson"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Actress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCategory">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasDirector -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasDirector">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasPerson"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#isDirectorOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Director"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasGenre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasGenre">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Genre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasPerson -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasPerson">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#isPersonOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasProducer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasProducer">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasPerson"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#isProducerOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Producer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasProductionHouse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasProductionHouse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#ProductionHouse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#isDirectorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#isDirectorOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasPerson"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Director"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#isPersonOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#isPersonOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#isProducerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#isProducerOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasPerson"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Producer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCertification -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCertification">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasLength -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasLength">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasRating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasRating">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasTitle"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Action">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Actor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Actress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Actress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#AdultCertificationMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#AdultCertificationMovie">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCertification"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</xsd:maxLength>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:onDataRange>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#UnderAgeCertificationMovie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Bollywood -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Bollywood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Category"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Hollywood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodActionMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodActionMovie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCategory"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Bollywood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasGenre"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Action"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodComedyMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodComedyMovie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasGenre"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Comedy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Bollywood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodDramaMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodDramaMovie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasGenre"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Drama"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Bollywood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodHorrorMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodHorrorMovie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasGenre"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Horror"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Bollywood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Category -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Category">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Bollywood"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Hollywood"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Comedy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Comedy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Dharma_Productions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Dharma_Productions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#ProductionHouse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Director -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Director">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Drama -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Drama">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Genre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Genre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HighRated -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HighRated">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasRating"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Hollywood -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Hollywood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodActionMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodActionMovie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Hollywood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasGenre"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Action"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodComedyMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodComedyMovie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Hollywood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasGenre"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Comedy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodDramaMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodDramaMovie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasGenre"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Drama"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Hollywood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodHorrorMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodHorrorMovie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Hollywood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasGenre"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Horror"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Horror -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Horror">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LongMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LongMovie">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasLength"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#ShortMovie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LowRated -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LowRated">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasRating"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCertification"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasLength"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasRating"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Producer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Producer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#ProductionHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#ProductionHouse"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#ShortMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#ShortMovie">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasLength"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#UnderAgeCertificationMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#UnderAgeCertificationMovie">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#hasCertification"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</xsd:minLength>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:onDataRange>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Universal_Studio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Universal_Studio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#ProductionHouse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Warner_Bros. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Warner_Bros.">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#ProductionHouse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Yash_Raj_Films -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Yash_Raj_Films">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#ProductionHouse"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Aamir_Khan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Aamir_Khan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Actor"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aamir Khan</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#All_The_Best -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#All_The_Best">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodComedyMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HighRated"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LongMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#UnderAgeCertificationMovie"/>
+        <hasCertification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UnderAgeCertification</hasCertification>
+        <hasLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</hasLength>
+        <hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</hasRating>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">All the Best</hasTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Anushka_Sharma -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Anushka_Sharma">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Actress"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anushka Sharma</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Avengers -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Avengers">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HighRated"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodActionMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LongMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#UnderAgeCertificationMovie"/>
+        <hasCertification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UnderAgeCertification</hasCertification>
+        <hasLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</hasLength>
+        <hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</hasRating>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Avengers</hasTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Conjuring -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Conjuring">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#AdultCertificationMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodHorrorMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LongMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LowRated"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <hasCertification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AdultCertification</hasCertification>
+        <hasLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</hasLength>
+        <hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</hasRating>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conjuring</hasTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Dharma_Production -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Dharma_Production">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Dharma_Productions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Haunted -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Haunted">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#AdultCertificationMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LongMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LowRated"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <hasCertification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AdultCertification</hasCertification>
+        <hasLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</hasLength>
+        <hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</hasRating>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Haunted</hasTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Krrish -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Krrish">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodActionMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HighRated"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LongMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#UnderAgeCertificationMovie"/>
+        <hasCertification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UnderAgeCertification</hasCertification>
+        <hasLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</hasLength>
+        <hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.5</hasRating>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Krrish</hasTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Moana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Moana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HighRated"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodComedyMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#ShortMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#UnderAgeCertificationMovie"/>
+        <hasCertification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UnderAgeCertification</hasCertification>
+        <hasLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</hasLength>
+        <hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0</hasRating>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Moana</hasTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Rajkumar_Hirani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Rajkumar_Hirani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Director"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#3_Idiots"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rajkumar Hirani</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Titanic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Titanic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#AdultCertificationMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HighRated"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodDramaMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LongMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <hasCertification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AdultCertification</hasCertification>
+        <hasLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</hasLength>
+        <hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.5</hasRating>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Titanic</hasTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Vidhu_Vinod_Chopra -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Vidhu_Vinod_Chopra">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Producer"/>
+        <hasProductionHouse rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Dharma_Production"/>
+        <isProducerOf rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Vidhu_Vinod_Chopra"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vidhu Vnod Chopra</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#3_Idiots -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#3_Idiots">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodDramaMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HighRated"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#LongMovie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Movie"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#UnderAgeCertificationMovie"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Aamir_Khan"/>
+        <hasActress rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Anushka_Sharma"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Rajkumar_Hirani"/>
+        <hasProducer rdf:resource="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Vidhu_Vinod_Chopra"/>
+        <hasCertification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UnderAgeCertification</hasCertification>
+        <hasLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</hasLength>
+        <hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</hasRating>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 idiots</hasTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Action"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Comedy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Drama"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Horror"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodActionMovie"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodComedyMovie"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodDramaMovie"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#BollywoodHorrorMovie"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodActionMovie"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodComedyMovie"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodDramaMovie"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#HollywoodHorrorMovie"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Dharma_Productions"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Universal_Studio"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Warner_Bros."/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chirag/Spring2017/EnterpriseIntegration/ontologies/Movie.owl#Yash_Raj_Films"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
